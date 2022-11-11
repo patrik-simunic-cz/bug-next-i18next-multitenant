@@ -7,9 +7,5 @@ module.exports = {
         locales: [ 'en', 'cs' ],
         defaultLocale: 'cs',
         localeDetection: false,
-        domains: [{
-            domain: 'testuj.to',
-            defaultLocale: 'cs',
-        }],
     },
 }
