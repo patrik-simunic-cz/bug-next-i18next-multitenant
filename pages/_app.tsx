@@ -4,10 +4,19 @@ import { appWithTranslation } from 'next-i18next'
 
 import '../styles/globals.css'
 
-export default appWithTranslation(({ Component, pageProps }: AppProps) => {
+// export default appWithTranslation(({ Component, pageProps }: AppProps) => {
+//     return (
+//         <Component
+//             {...pageProps}
+//         />
+//     )
+// })
+
+
+export default ({ Component, pageProps }: AppProps) => {
     return (
         <Component
             {...pageProps}
         />
     )
-})
+}

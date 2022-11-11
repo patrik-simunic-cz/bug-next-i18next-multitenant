@@ -1,8 +1,8 @@
 
 import { GetStaticPaths, GetStaticProps } from 'next'
 import type { ParsedUrlQuery } from 'querystring'
-import { useTranslation } from 'next-i18next'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+// import { useTranslation } from 'next-i18next'
+// import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 export interface WorksPageQuery extends ParsedUrlQuery {}
 export interface WorksPageProps {
@@ -10,7 +10,8 @@ export interface WorksPageProps {
 }
 
 export default ({ tenant }: WorksPageProps) => {
-    const { t } = useTranslation()
+    // const { t } = useTranslation()
+    const t = (k, m) => k
 
     return (
         <div>
@@ -36,7 +37,7 @@ export const getStaticProps: GetStaticProps<WorksPageProps, WorksPageQuery> = as
     return {
         revalidate: 3600,
         props: {
-            ...(await serverSideTranslations(locale, [ 'common' ])),
+            // ...(await serverSideTranslations(locale, [ 'common' ])),
             tenant: String(params.tenant),
         },
     }
